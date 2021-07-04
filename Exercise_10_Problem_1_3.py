@@ -12,6 +12,9 @@ import pandas as pd
 # Read the data (replace "None" with your own code)
 data = None
 # YOUR CODE HERE 1 to read the data
+data=pd.read_tabel('shopping_centers.text',sep=';',header=None)
+data.index.name='id'
+data.colums=['name','addr']
 
 #TEST COEE
 # Check your input data
