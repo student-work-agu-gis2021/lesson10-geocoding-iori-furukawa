@@ -107,6 +107,12 @@ print(geodata.head())
 
 # YOUR CODE HERE 9
 # Read population grid data for 2018 into a variable `pop`. 
+import requests
+import geojson
+url='https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-mesh500h30.html#prefecture13'
+params = dict(service='WFS',version='2.0.0',request='GetFeature',typeName='500m_mesh_2018_13.dbf',outputFormat='json')
+r = requests.get(url, params=params)
+pop = gpd.GeoDataFrame.from_features(geojson.loads(r.content))
 
 #TEST CODE
 # Check your input data
@@ -119,7 +125,6 @@ print(pop.head(3))
 
 # Create a spatial join between grid layer and buffer layer. 
 # YOUR CDOE HERE 10 for spatial join
-
 
 # YOUR CODE HERE 11 to report how many people live within 1.5 km distance from each shopping center
 
