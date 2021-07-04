@@ -12,7 +12,7 @@ import pandas as pd
 # Read the data (replace "None" with your own code)
 data = None
 # YOUR CODE HERE 1 to read the data
-data=pd.read_table('shopping_centers.text',sep=';',header=None)
+data=pd.read_table('shopping_centers.txt',sep=';',header=None)
 data.index.name='id'
 data.colums=['name','addr']
 
@@ -50,6 +50,7 @@ print(geo.crs)
 
 # YOUR CODE HERE 4 to join the tables
 geodata = None
+geodata=geo.join(data)
 
 #TEST CODE
 # Check the join output
